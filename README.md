@@ -1,16 +1,32 @@
-# React + Vite
+# Palabras Encadenadas - TFI
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Trabajo Final Integrador para la materia Interfaces de Usuario (1°C 2026).
 
-Currently, two official plugins are available:
+## Sobre el juego
+El objetivo es formar la cadena más larga posible de palabras válidas antes de que se agote el tiempo (15 segundos por turno). 
+Cada nueva palabra debe existir en el diccionario, no haber sido usada antes en la partida, y comenzar con la última letra de la palabra anterior.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Cómo instalar y ejecutar el proyecto localmente
+### Prerrequisitos
+Tener instalado [Node.js](https://nodejs.org/) en la computadora.
 
-## React Compiler
+### Instalación
+1. Clonar el repositorio en la máquina local:
+   \`\`\`bash
+   git clone https://github.com/lucrecolon/unq-ui-lucrecia-colon-trabajo-final.git
+   \`\`\`
+2. Navegar al directorio del proyecto:
+   \`\`\`bash
+   cd unq-ui-lucrecia-colon-trabajo-final
+   \`\`\`
+3. Instalar las dependencias necesarias:
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Ejecución
+Para levantar el servidor de desarrollo, ejecutar el siguiente comando:
+\`\`\`bash
+npm run dev
+\`\`\`
+El proyecto estará disponible por defecto en \`http://localhost:5173\`.
