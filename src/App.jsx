@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Leaderboard from './components/Leaderboard';
 import './App.css';
 
 function App() {
@@ -13,6 +14,11 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
+  const [leaderboard, setLeaderboard] = useState(() => {
+    const saved = localStorage.getItem('encadenadas_leaderboard');
+    return saved ? JSON.parse(saved) : [];
+  });
+
   useEffect(() => {
     if (gameStarted && !gameOver && timeLeft > 0) {
       const timerId = setInterval(() => {
@@ -24,12 +30,26 @@ function App() {
     
     if (timeLeft === 0 && !gameOver && gameStarted) {
       setGameOver(true);
+      actualizarLeaderboard(puntaje);
     }
   }, [gameStarted, gameOver, timeLeft]);
 
+  const actualizarLeaderboard = (finalScore) => {
+    const nuevoRegistro = {
+      score: finalScore,
+      date: new Date().toLocaleDateString('es-AR', { hour: '2-digit', minute: '2-digit' }),
+    };
+
+    const nuevoTop10 = [...leaderboard, nuevoRegistro]
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+
+    setLeaderboard(nuevoTop10);
+    localStorage.setItem('encadenadas_leaderboard', JSON.stringify(nuevoTop10));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (gameOver) return; 
 
     const palabra = inputActual.trim().toLowerCase();
@@ -103,7 +123,7 @@ function App() {
 
       {gameOver ? (
         <div className="game-over-panel">
-          <h2>¡Fin de la Partida!</h2>
+          <h2>Fin de la Partida!</h2>
           <p>Lograste encadenar <strong>{cadena.length}</strong> palabras válidas.</p>
           <p>Tu puntaje final es de <strong>{puntaje}</strong> puntos.</p>
           
@@ -139,6 +159,8 @@ function App() {
           {cadena.length === 0 ? "Aún no ingresaste palabras." : cadena.join(" -> ")}
         </p>
       </div>
+
+      <Leaderboard leaderboard={leaderboard} />
     </div>
   );
 }
