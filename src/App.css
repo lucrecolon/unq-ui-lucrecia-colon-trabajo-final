@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 
-body {
+html, body {
   background-image: url('./assets/background-vacio.png'); 
   background-size: cover;
   background-position: center;
@@ -9,6 +9,7 @@ body {
   color: #555533;
   margin: 0;
   font-family: 'Fredoka', 'Segoe UI', Tahoma, sans-serif;
+  overscroll-behavior-y: none;
 }
 
 .app-container {
