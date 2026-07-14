@@ -6,7 +6,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-color: #fdfbf7;
-  color: #334155;
+  color: #555533;
   margin: 0;
   font-family: 'Fredoka', 'Segoe UI', Tahoma, sans-serif;
 }
@@ -227,4 +227,46 @@ body {
   margin-top: 20px;
   padding-top: 15px;
   border-top: 2px dashed #cbd5e1;
+}
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 15px 10px;
+  }
+  
+  .score-panel h3 {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    line-height: 1.4;
+    white-space: normal; 
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .score-panel h2 {
+    font-size: 1.5rem;
+  }
+
+  .game-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .game-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .game-logo {
+    max-height: 100px; 
+  }
+  
+  .go-title {
+    font-size: 1.6rem;
+  }
 }

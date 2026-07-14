@@ -76,13 +76,53 @@
 
 .leaderboard-score {
   font-weight: bold;
-  color: #f8fafc;
+  color: #059669;
   flex-grow: 1;
   text-align: left;
+}
+
+.leaderboard-name {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 10px;
+  margin-right: 15px;
+  color: #1e293b;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .leaderboard-date {
   color: #94a3b8;
   font-size: 0.9rem;
   text-align: right;
+}
+
+@media (max-width: 600px) {
+  .leaderboard-title {
+    font-size: 1.35rem; 
+  }
+  
+  .leaderboard-header {
+    gap: 8px;
+  }
+  
+  .leaderboard-item {
+    font-size: 0.9rem;
+    padding: 10px 5px;
+  }
+  
+  .leaderboard-position {
+    width: 25px;
+  }
+  
+  .leaderboard-score {
+    width: 65px;
+    margin-right: 5px;
+  }
+  
+  .leaderboard-date {
+    font-size: 0.8rem;
+  }
 }
