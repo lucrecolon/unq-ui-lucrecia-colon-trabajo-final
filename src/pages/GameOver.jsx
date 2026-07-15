@@ -16,7 +16,7 @@ function GameOver() {
   const handleSaveScore = (e) => {
     e.preventDefault();
     if (!playerName.trim()) {
-      setErrorInput("¡El nombre no puede estar vacío!");
+      setErrorInput("El nombre no puede estar vacío");
       return;
     }
 
@@ -50,7 +50,7 @@ function GameOver() {
         
         {decision === null && (
           <div className="decision-box">
-            <p>¿Querés guardar tu score en el Leaderboard?</p>
+            <p>Querés guardar tu score en el Leaderboard?</p>
             <div className="btn-group">
               <button onClick={() => setDecision('yes')} className="btn-submit">Sí, guardar</button>
               <button onClick={() => setDecision('no')} className="btn-restart">No, gracias</button>

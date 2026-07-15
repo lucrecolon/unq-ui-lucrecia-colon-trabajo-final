@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 
 html, body {
-  background-image: url('./assets/background-vacio.png'); 
+  background-image: url('./assets/background3.png'); 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -24,17 +24,33 @@ html, body {
   box-sizing: border-box;
 }
 
-.logo-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
+.game-header {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
-.game-logo {
-  max-width: 100%;
-  max-height: 130px;
-  object-fit: contain;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+.game-header h1 {
+  font-size: 3.2rem;
+  color: #f97316;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  -webkit-text-stroke: 3px #ffffff; 
+  text-shadow: 
+    4px 4px 0px #c2410c, 
+    6px 6px 8px rgba(0, 0, 0, 0.25);
+  transform: rotate(-2deg);
+}
+
+.game-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(50px);
+  border: 2px solid rgba(210, 195, 163, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .score-panel h2 {
@@ -67,7 +83,7 @@ html, body {
   margin-bottom: 15px;
   padding: 12px 15px;
   background-color: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(40px);
   border: 2px solid rgba(210, 195, 163, 0.6);
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -166,7 +182,8 @@ html, body {
   padding: 12px 25px;
   width: 100%;
   max-width: 250px;
-  margin-top: 15px;
+  margin-top: 1px;
+  margin-bottom: 15px;
 }
 
 .btn-group {
@@ -174,6 +191,7 @@ html, body {
   justify-content: center;
   gap: 15px;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .btn-group button {
@@ -196,12 +214,13 @@ html, body {
 .history-panel {
   margin-top: 15px;
   padding-top: 10px;
-  border-top: 2px dashed #cbd5e1;
+  border: 2px solid #f9a8d4;
 }
 
 .history-panel h3 {
   margin: 5px 0;
   font-size: 1.1rem;
+  color: #db2777;
 }
 
 .history-text {
@@ -224,7 +243,13 @@ html, body {
   color: #1e293b;
 }
 
-.decision-box, .save-form, .play-again-box {
+.decision-box {
+  margin-top: 20px;
+  padding-top: 0px;
+  border-top: 2px dashed #cbd5e1;
+} 
+
+.save-form, .play-again-box {
   margin-top: 20px;
   padding-top: 15px;
   border-top: 2px dashed #cbd5e1;

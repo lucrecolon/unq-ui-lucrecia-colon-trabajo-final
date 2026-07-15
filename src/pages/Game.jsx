@@ -85,39 +85,41 @@ function Game() {
 
   return (
     <div className="app-container">
-      <div className="logo-container">
-        <img src={logoImage} alt="Palabras Encadenadas" className="game-logo" />
+      <div className="game-header">
+        <h1>PALABRAS ENCADENADAS</h1>
       </div>
 
-      <div className="score-panel">
-        <h2>Puntaje Total: {puntaje}</h2>
-        <p>Palabras válidas: {cadena.length}</p>
-        <h3 className={timeLeft <= 5 && gameStarted ? 'time-warning' : ''}>
-          Tiempo: {gameStarted ? `${timeLeft}s` : "Ingresá la primera palabra para iniciar el tiempo..."}
-        </h3>
-      </div>
-
-      <form onSubmit={handleSubmit} className="game-form">
-        <input 
-          type="text" 
-          value={inputActual}
-          onChange={(e) => setInputActual(e.target.value)}
-          placeholder="Ingresá una palabra..."
-          disabled={loading}
-          className="game-input"
-        />
-        <button type="submit" disabled={loading} className="btn-submit">
-          {loading ? 'Validando...' : 'Enviar'}
-        </button>
-      </form>
-
-      {mensajeError && (
-        <div className="error-message">
-          {mensajeError}
+      <div className="game-card">
+        <div className="score-panel">
+          <h2>Puntaje Total: {puntaje}</h2>
+          <p>Palabras válidas: {cadena.length}</p>
+          <h3 className={timeLeft <= 5 && gameStarted ? 'time-warning' : ''}>
+            Tiempo: {gameStarted ? `${timeLeft}s` : "Ingresá la primera palabra..."}
+          </h3>
         </div>
-      )}
 
-      <div className="history-panel">
+        <form onSubmit={handleSubmit} className="game-form">
+          <input 
+            type="text" 
+            value={inputActual}
+            onChange={(e) => setInputActual(e.target.value)}
+            placeholder="Ingresá una palabra..."
+            disabled={loading}
+            className="game-input"
+          />
+          <button type="submit" disabled={loading} className="btn-submit">
+            {loading ? 'Validando...' : 'Enviar'}
+          </button>
+        </form>
+
+        {mensajeError && (
+          <div className="error-message">
+            {mensajeError}
+          </div>
+        )}
+      </div>
+
+      <div className="game-card history-panel">
         <h3>Cadena actual:</h3>
         <p className="history-text">
           {cadena.length === 0 ? "Aún no ingresaste palabras." : cadena.join(" -> ")}
@@ -126,7 +128,6 @@ function Game() {
 
       <Leaderboard leaderboard={leaderboard} />
     </div>
-  );
-}
+  )};
 
 export default Game;
