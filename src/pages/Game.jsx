@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Leaderboard from '../components/Leaderboard';
 import logoImage from '../assets/background1.png';
+import RulesModal from '../components/RulesModal';
 
 function Game() {
   const [cadena, setCadena] = useState([]);
@@ -12,6 +13,8 @@ function Game() {
   const [loading, setLoading] = useState(false);
   const [timeLeft, setTimeLeft] = useState(15);
   const [gameStarted, setGameStarted] = useState(false);
+
+  const [isRulesOpen, setIsRulesOpen] = useState(false);
   
   const navigate = useNavigate();
 
@@ -124,9 +127,16 @@ function Game() {
         <p className="history-text">
           {cadena.length === 0 ? "Aún no ingresaste palabras." : cadena.join(" -> ")}
         </p>
+        <span 
+          className="rules-link" 
+          onClick={() => setIsRulesOpen(true)}
+        >
+          ¿Cómo generar cadenas?
+        </span>
       </div>
 
       <Leaderboard leaderboard={leaderboard} />
+      <RulesModal isOpen={isRulesOpen} onClose={() => setIsRulesOpen(false)} />
     </div>
   )};
 
