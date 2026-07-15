@@ -11,22 +11,9 @@ Cada nueva palabra debe existir en el diccionario, no haber sido usada antes en 
 Tener instalado [Node.js](https://nodejs.org/) en la computadora.
 
 ### Instalación
-1. Clonar el repositorio en la máquina local:
-   \`\`\`bash
-   git clone https://github.com/lucrecolon/unq-ui-lucrecia-colon-trabajo-final.git
-   \`\`\`
-2. Navegar al directorio del proyecto:
-   \`\`\`bash
-   cd unq-ui-lucrecia-colon-trabajo-final
-   \`\`\`
-3. Instalar las dependencias necesarias:
-   \`\`\`bash
-   npm install
-   \`\`\`
+1. Clonar el repositorio en la máquina local: `git clone https://github.com/lucrecolon/unq-ui-lucrecia-colon-trabajo-final.git`
+2. Navegar al directorio del proyecto: `cd unq-ui-lucrecia-colon-trabajo-final`
+3. Instalar las dependencias necesarias: `npm install`
 
 ### Ejecución
-Para levantar el servidor de desarrollo, ejecutar el siguiente comando:
-\`\`\`bash
-npm run dev
-\`\`\`
-El proyecto estará disponible por defecto en \`http://localhost:5173\`.
+Para levantar el servidor, ejecutar el siguiente comando: `npm run dev`. El proyecto estará disponible por defecto en `http://localhost:5173`.
