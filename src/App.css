@@ -257,7 +257,26 @@ html, body {
 
 @media (max-width: 600px) {
   .app-container {
-    padding: 15px 10px;
+    padding: 15px 25px;
+  }
+
+  
+  .game-header h1 {
+    font-size: 3.2rem;
+    padding-bottom: 30px;
+    color: #f97316;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 3px;
+    -webkit-text-stroke: 2px #ffffff; 
+    text-shadow: 
+      4px 4px 0px #c2410c, 
+      6px 6px 8px rgba(0, 0, 0, 0.25);
+    transform: rotate(-2deg);
+  }
+
+  html, body {
+    background-position: 32%;
   }
   
   .score-panel h3 {
